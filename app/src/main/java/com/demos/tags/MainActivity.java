@@ -23,12 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final String TAG = "MainActivity";
     private SqliteDbHelper dbHelper;
     private TextView tv_add,tv_addContent,tv_updatecontet,tv_deletecontet,tv_selectcontet
-            ,tv_addContentApi,
-            tv_updatecontetApi,
-            tv_deletecontetApi,
-            tv_selectcontetApi,
-            tv_phone
-            ,tv_RecyclerView,tv_listView,tv_listView2,tv_insertmore,tv_page;
+            ,tv_addContentApi, tv_updatecontetApi, tv_deletecontetApi, tv_selectcontetApi, tv_phone,tv_RecyclerView,tv_listView,tv_listView2,tv_insertmore,tv_page;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
