@@ -23,7 +23,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final String TAG = "MainActivity";
     private SqliteDbHelper dbHelper;
     private TextView tv_add,tv_addContent,tv_updatecontet,tv_deletecontet,tv_selectcontet
-            ,tv_addContentApi, tv_updatecontetApi, tv_deletecontetApi, tv_selectcontetApi, tv_phone,tv_RecyclerView,tv_listView,tv_listView2,tv_insertmore,tv_page;
+            ,tv_addContentApi, tv_updatecontetApi, tv_deletecontetApi,
+            tv_selectcontetApi, tv_phone,tv_RecyclerView,tv_listView,
+            tv_listView2,tv_insertmore,tv_page,tv_videoplayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +64,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tv_insertmore.setOnClickListener(this);
         tv_page = (TextView) findViewById(R.id.tv_page);
         tv_page.setOnClickListener(this);
+        tv_videoplayer = (TextView) findViewById(R.id.tv_videoplayer);
+        tv_videoplayer.setOnClickListener(this);
 
         ExistSDCard();
     }
@@ -178,6 +182,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.tv_page:
                 startActivity(new Intent(MainActivity.this,MoreInsertActivity.class));
+                break;
+            case R.id.tv_videoplayer:
+                startActivity(new Intent(MainActivity.this,VidoPlayerActivity.class));
                 break;
 
         }

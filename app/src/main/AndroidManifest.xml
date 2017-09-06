@@ -24,7 +24,9 @@
         <activity android:name=".RecylerViewActivity" />
         <activity android:name=".SqliteListViewActivity" />
         <activity android:name=".CursorAdapterActivity" />
-        <activity android:name=".MoreInsertActivity"></activity>
+        <activity android:name=".MoreInsertActivity" />
+        <activity android:name=".VidoPlayerActivity"
+           android:configChanges="orientation|screenSize|keyboard|keyboardHidden" ></activity>
     </application>
 
 </manifest>
