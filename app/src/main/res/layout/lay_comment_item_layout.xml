@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:paddingLeft="16dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="4dp">
+        <!--<com.itheima.roundedimageview.RoundedImageView-->
+            <!--android:id="@+id/iv_avatar"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@mipmap/ic_launcher"-->
+            <!--android:scaleType="fitCenter"-->
+            <!--app:riv_corner_radius="10dip"-->
+            <!--app:riv_border_width="1dip"-->
+            <!--app:riv_border_color="#333333"-->
+            <!--app:riv_oval="false" />-->
+<com.demos.tags.view.CircleImageView
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:id="@+id/iv_avatar"/>
+        <!--
+            关键属性解释：
+
+            app:riv_corner_radius ： 四周角度
+            app:riv_border_width ：  描边宽度
+            app:riv_border_color ： 描边颜色
+            app:riv_oval="false"  ： 是否是圆型 ， 若为true， 则上面的radius可不用设置。-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical">
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="年轻的小蜜蜂"
+                tools:text="年轻的小蜜蜂"
+                android:textSize="14sp"
+                android:textColor="#111111"/>
+            <TextView
+                android:id="@+id/tv_pub_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2楼 6分钟前"
+                tools:text="2楼 6分钟前"
+                android:textSize="12sp"
+                android:textColor="#6a6a6a"/>
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/btn_comment"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginRight="16dp"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/ic_launcher_round"
+            android:contentDescription="开源中国"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/lay_refer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <com.demos.tags.view.FloorView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ly_refers"
+            android:visibility="visible"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/space_4"
+         >
+
+        </com.demos.tags.view.FloorView>
+        <com.demos.tags.view.TweetTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="8dp"
+            android:text="内容"
+            android:textColor="#111111"
+            tools:ignore="RtlHardcoded,RtlSymmetry"/>
+        <View
+            android:id="@+id/view_line"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#666"/>
+    </LinearLayout>
+</LinearLayout>

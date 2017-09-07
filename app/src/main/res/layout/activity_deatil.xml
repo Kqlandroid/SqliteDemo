@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.demos.tags.DeatilActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tv_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:padding="5dp"
+                android:layout_marginLeft="5dp"
+                android:text="aaa"/>
+            <TextView
+                android:id="@+id/tv_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#999"
+                android:textSize="16sp"
+                android:padding="5dp"
+                android:layout_marginLeft="5dp"
+                android:text="bbb"/>
+            <WebView
+                android:id="@+id/webview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"></WebView>
+            <TextView
+                android:id="@+id/tv_it"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="#666"
+                android:padding="10dp"
+                android:text="相关软件"/>
+            <LinearLayout
+                android:id="@+id/abouts_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!--<include layout="@layout/abouts_item_layout"/>-->
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_commcontent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="#666"
+                android:padding="10dp"
+                android:text="相关推荐"/>
+            <LinearLayout
+                android:id="@+id/recommend_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!--<include layout="@layout/abouts_item_layout"/>-->
+            </LinearLayout>
+            <TextView
+                android:id="@+id/tv_pl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="#666"
+                android:padding="10dp"
+                android:text="评论（8）"/>
+            <LinearLayout
+                android:id="@+id/comment_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!--<include layout="@layout/abouts_item_layout"/>-->
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+        <RelativeLayout
+            android:id="@+id/layout_left"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tv_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textColor="#000"
+                android:textSize="16sp"
+                android:text="LagerText"/>
+            <TextView
+                android:id="@+id/tv_12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textColor="#666"
+                android:layout_below="@+id/tv_1"
+                android:textSize="16sp"
+                android:text="NextText"/>
+            <TextView
+                android:id="@+id/tv_123"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textColor="#999"
+                android:layout_below="@+id/tv_12"
+                android:textSize="16sp"
+                android:text="2017-12-8 08:20"/>
+            <TextView
+                android:id="@+id/tv_1234"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textColor="#666"
+                android:textSize="16sp"
+                android:layout_below="@+id/tv_12"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:text="111"/>
+        </RelativeLayout>
+
+</RelativeLayout>
