@@ -2,7 +2,6 @@ package com.demos.tags;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.webkit.WebView;
@@ -12,10 +11,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.demos.tags.bean.Comment;
 import com.demos.tags.bean.Deatil;
 import com.demos.tags.bean.DetailComment;
-import com.demos.tags.utile.utils.XmlUtils;
 import com.demos.tags.view.CircleImageView;
 import com.demos.tags.view.FloorView;
 import com.demos.tags.view.TweetTextView;
