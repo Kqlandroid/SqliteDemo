@@ -1,4 +1,4 @@
-package com.demos.tags;
+package com.demos.tags.ui;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,7 @@ import android.util.Log;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.demos.tags.R;
 import com.demos.tags.bean.Deatil;
 import com.demos.tags.bean.MyInfo;
 import com.demos.tags.utile.utils.StringUtils;

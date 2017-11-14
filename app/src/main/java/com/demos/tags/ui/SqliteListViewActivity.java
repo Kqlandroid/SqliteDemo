@@ -1,4 +1,4 @@
-package com.demos.tags;
+package com.demos.tags.ui;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
+import com.demos.tags.R;
 import com.demos.tags.utile.Content;
 
 import java.io.File;

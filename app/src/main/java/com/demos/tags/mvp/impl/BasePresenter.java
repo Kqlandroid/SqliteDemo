@@ -11,7 +11,7 @@ import com.demos.tags.utile.Content;
 public class BasePresenter {
     Context mContext;
     public void attach(Context context){
-        mContext=context;
+        mContext = context;
     }
     public void onPause(){}
     public void onResume(){}

@@ -1,4 +1,4 @@
-package com.demos.tags;
+package com.demos.tags.ui;
 
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Environment;
@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.AbsListView;
 import android.widget.ListView;
 
+import com.demos.tags.R;
 import com.demos.tags.adapter.SqliteAdapter;
 import com.demos.tags.bean.Persion;
 import com.demos.tags.bean.TestBean;

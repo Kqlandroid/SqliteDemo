@@ -1,4 +1,4 @@
-package com.demos.tags;
+package com.demos.tags.ui;
 
 import android.content.ContentValues;
 import android.content.Intent;
@@ -8,10 +8,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.CursorAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.demos.tags.R;
 import com.demos.tags.bean.Persion;
 import com.demos.tags.utile.Content;
 import com.demos.tags.utile.DbManger;
@@ -22,6 +22,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "MainActivity";
     private SqliteDbHelper dbHelper;
+    private SQLiteDatabase db;
     private TextView tv_add,tv_addContent,tv_updatecontet,tv_deletecontet,tv_selectcontet
             ,tv_addContentApi, tv_updatecontetApi, tv_deletecontetApi,
             tv_selectcontetApi, tv_phone,tv_RecyclerView,tv_listView,
@@ -42,7 +43,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tv_deletecontet.setOnClickListener(this);
         tv_selectcontet = (TextView) findViewById(R.id.tv_selectcontet);
         tv_selectcontet.setOnClickListener(this);
-
 //        Api
         tv_addContentApi = (TextView) findViewById(R.id.tv_addcontetApi);
         tv_addContentApi.setOnClickListener(this);
@@ -87,7 +87,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()){
             case R.id.tv_addTabler:
                 //创建数据库
-                SQLiteDatabase db=dbHelper.getWritableDatabase();
                 break;
             case R.id.tv_addcontet:
 //                插入数据
@@ -96,8 +95,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     String sql="insert into "+ Content.KEY_tabler+" values ("+i+",'zhangsan"+i+"',20)";
                     DbManger.execSQl(db,sql);
                 }
-
-
                 db.close();
                 break;
             case R.id.tv_updatecontet:

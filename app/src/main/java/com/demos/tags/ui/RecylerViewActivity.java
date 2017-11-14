@@ -1,4 +1,4 @@
-package com.demos.tags;
+package com.demos.tags.ui;
 
 import android.graphics.Rect;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 
+import com.demos.tags.R;
 import com.demos.tags.adapter.MoreRecylerViewAdapter;
 import com.demos.tags.bean.DataModelOne;
 import com.demos.tags.bean.DataModelThree;

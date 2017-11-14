@@ -3,12 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.demos.tags.VidoPlayerActivity">
+    tools:context="com.demos.tags.ui.VidoPlayerActivity">
     <RelativeLayout
         android:id="@+id/video_layout"
         android:layout_width="match_parent"
         android:layout_height="240dp">
-        <com.demos.tags.CustomVideoView
+        <com.demos.tags.ui.CustomVideoView
             android:id="@+id/videoView"
             android:layout_width="match_parent"
             android:layout_height="240dp"/>

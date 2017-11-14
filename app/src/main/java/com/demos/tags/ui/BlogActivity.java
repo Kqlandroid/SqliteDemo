@@ -1,4 +1,4 @@
-package com.demos.tags;
+package com.demos.tags.ui;
 
 import android.os.Bundle;
 import android.support.annotation.IdRes;
@@ -9,6 +9,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.demos.tags.R;
 import com.demos.tags.bean.BlogBean;
 import com.demos.tags.utile.utils.StringUtils;
 

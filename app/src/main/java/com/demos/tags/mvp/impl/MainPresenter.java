@@ -27,8 +27,7 @@ public class MainPresenter extends BasePresenter {
         mvpMainView = mainView;
     }
     public void sarchPhoneInfo(String phone){
-
-        if (phone.length()!=11){
+        if (phone.length() != 11){
             mvpMainView.showToast("请输入正确的手机号码!");
         }
         mvpMainView.showLoading();
@@ -69,7 +68,7 @@ public class MainPresenter extends BasePresenter {
             JSONObject jsonObject = new JSONObject(json);
             String value = jsonObject.getString("telString");
             phone.setTelString(value);
-            value=jsonObject.getString("province");
+            value = jsonObject.getString("province");
             phone.setProvince(value);
             value = jsonObject.getString("catName");
             phone.setCatname(value);
@@ -80,13 +79,12 @@ public class MainPresenter extends BasePresenter {
         }
         return phone;
     }
-    private Phone parseModeWiteGson(String json)
-    {
-        Phone phone=new Gson().fromJson(json,Phone.class);
+    private Phone parseModeWiteGson(String json) {
+        Phone phone = new Gson().fromJson(json,Phone.class);
         return phone;
     }
     private Phone parseModeWiteFastJson(String json){
-        Phone phone= com.alibaba.fastjson.JSONObject.parseObject(json,Phone.class);
+        Phone phone = com.alibaba.fastjson.JSONObject.parseObject(json,Phone.class);
         return phone;
     }
 }

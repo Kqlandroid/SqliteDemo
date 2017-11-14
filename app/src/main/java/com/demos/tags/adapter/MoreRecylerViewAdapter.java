@@ -5,7 +5,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
-import com.demos.tags.MainActivity;
 import com.demos.tags.R;
 import com.demos.tags.bean.DataModelOne;
 import com.demos.tags.bean.DataModelThree;

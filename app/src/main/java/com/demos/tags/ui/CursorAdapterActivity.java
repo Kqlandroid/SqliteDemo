@@ -1,4 +1,4 @@
-package com.demos.tags;
+package com.demos.tags.ui;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -13,6 +13,7 @@ import android.widget.CursorAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.demos.tags.R;
 import com.demos.tags.utile.Content;
 
 import java.io.File;
@@ -25,8 +26,9 @@ public class CursorAdapterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cursor_adapter);
         listView= (ListView) findViewById(R.id.lv);
-        String path= Environment.getExternalStorageDirectory().getAbsolutePath()
+        String path = Environment.getExternalStorageDirectory().getAbsolutePath()
                 + File.separator+"info.db";
+
         database=SQLiteDatabase.openDatabase(path,null,SQLiteDatabase.OPEN_READONLY);
         Cursor cursor=database.rawQuery("select * from "+ Content.KEY_tabler,null);
         MyCursorAapter adapter=new MyCursorAapter(CursorAdapterActivity.this,cursor,CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER);
