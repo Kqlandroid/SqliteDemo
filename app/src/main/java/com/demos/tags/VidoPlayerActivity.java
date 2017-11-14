@@ -3,6 +3,7 @@ package com.demos.tags;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.media.AudioManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
@@ -70,10 +71,10 @@ public class VidoPlayerActivity extends AppCompatActivity {
         }
 
         //本地视频播放
-        videoView.setVideoPath(path);
+//        videoView.setVideoPath(path);
 
         //网络视频播放
-//        videoView.setVideoURI(Uri.parse("http://v.yinyuetai.com/video/96473"));
+        videoView.setVideoURI(Uri.parse("http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"));
         //使用MEdiaController控制播放
         videoView.start();
         UIHndler.sendEmptyMessage(UPDATE_UI);

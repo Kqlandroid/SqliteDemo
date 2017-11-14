@@ -25,9 +25,9 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile files('libs/okio-1.9.0.jar')
     //开源中国
     //头部轮播图
+    compile files('libs/xstream-1.4.7.jar')
     compile 'com.squareup.okhttp3:okhttp:3.4.1'
     compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
@@ -39,7 +39,10 @@ dependencies {
     compile 'com.github.open-android:LoopViewPager:2.0.0'
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
-    compile files('libs/xstream-1.4.7.jar')
-    //详情界面评论圆图
-//    compile 'com.github.open-android:RoundedImageView:v1.0.0'
+    //搞定 RecycleView 自动加载更多、侧滑菜单、添加头部底部
+//    compile 'com.github.yhaolpz:SlideAdapter:1.0.0'
+    //轮播图
+    compile 'com.youth.banner:banner:1.4.10'
+    //最新版本
+    compile project(':slideadapter')
 }
