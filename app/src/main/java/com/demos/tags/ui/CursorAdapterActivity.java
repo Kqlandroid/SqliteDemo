@@ -3,7 +3,6 @@ package com.demos.tags.ui;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -16,8 +15,6 @@ import android.widget.TextView;
 import com.demos.tags.R;
 import com.demos.tags.utile.Content;
 
-import java.io.File;
-
 public class CursorAdapterActivity extends AppCompatActivity {
     private ListView listView;
     private SQLiteDatabase database;
@@ -25,13 +22,11 @@ public class CursorAdapterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cursor_adapter);
-        listView= (ListView) findViewById(R.id.lv);
-        String path = Environment.getExternalStorageDirectory().getAbsolutePath()
-                + File.separator+"info.db";
-
-        database=SQLiteDatabase.openDatabase(path,null,SQLiteDatabase.OPEN_READONLY);
-        Cursor cursor=database.rawQuery("select * from "+ Content.KEY_tabler,null);
-        MyCursorAapter adapter=new MyCursorAapter(CursorAdapterActivity.this,cursor,CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER);
+        listView = (ListView) findViewById(R.id.lv);
+        String path = getApplicationContext().getDatabasePath(Content.KEY_SQLITE_NAME).getPath();
+        database = SQLiteDatabase.openDatabase(path,null,SQLiteDatabase.OPEN_READONLY);
+        Cursor cursor = database.rawQuery("select * from "+ Content.KEY_tabler,null);
+        MyCursorAapter adapter = new MyCursorAapter(CursorAdapterActivity.this,cursor,CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER);
         listView.setAdapter(adapter);
     }
     private class MyCursorAapter extends CursorAdapter{

@@ -204,15 +204,30 @@
             android:textColor="#fff"
             android:background="@color/colorPrimaryDark"/>
         <TextView
+            android:id="@+id/tv_cehua"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:text="Test"
+            android:text="多种布局"
             android:layout_weight="1"
             android:gravity="center"
             android:padding="10dp"
             android:textSize="18sp"
             android:textColor="#fff"
             android:background="@color/colorPrimaryDark"/>
+        <TextView
+            android:id="@+id/tv_recylview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="左滑右滑"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="10dp"
+            android:textSize="18sp"
+            android:textColor="#fff"
+            android:background="@color/colorPrimaryDark"/>
+
+
     </LinearLayout>
 </LinearLayout>

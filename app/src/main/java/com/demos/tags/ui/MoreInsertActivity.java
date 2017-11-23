@@ -25,9 +25,9 @@ public class MoreInsertActivity extends AppCompatActivity {
     private ListView listView;
     SQLiteDatabase db;
     int totalNum;//表示当前控件加载数据的总条目
-    int pageSize=15;//表示每页展示的数据条目
+    int pageSize = 15;//表示每页展示的数据条目
     int pageNum;//表示总页码
-    int currentPage=1;//当前页码
+    int currentPage = 1;//当前页码
     List<Persion> list = new ArrayList<>();
     SqliteAdapter adapter;
     boolean isDivPage;
@@ -35,16 +35,14 @@ public class MoreInsertActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_more_insert);
-        helper=new SqliteDbHelper(this);
-        listView= (ListView) findViewById(R.id.lv);
-        String path= Environment.getExternalStorageDirectory().getAbsolutePath()+
-                File.separator+"info.db";
+        helper = new SqliteDbHelper(this);
+        listView = (ListView) findViewById(R.id.lv);
+        String path = getApplicationContext().getDatabasePath(Content.KEY_SQLITE_NAME).getPath();
         db = SQLiteDatabase.openDatabase(path,null,SQLiteDatabase.OPEN_READONLY);
         totalNum = DbManger.getDataCount(db,Content.KEY_tabler);
         pageNum = (int) Math.ceil(totalNum/(double)pageSize);
         if (currentPage == 1){
-            list = DbManger.getListCurrentPage(db,Content.KEY_tabler,
-                    currentPage,pageSize);
+            list = DbManger.getListCurrentPage(db,Content.KEY_tabler, currentPage,pageSize);
         }
         adapter = new SqliteAdapter(this,list);
         listView.setAdapter(adapter);

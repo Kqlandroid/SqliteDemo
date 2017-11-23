@@ -21,8 +21,7 @@ private ListView lv;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sqlite_list_view);
         lv = (ListView) findViewById(R.id.lv);
-    String path= Environment.getExternalStorageDirectory().getAbsolutePath()
-            + File.separator+"info.db";
+        String path = getApplicationContext().getDatabasePath(Content.KEY_SQLITE_NAME).getPath();
         database=SQLiteDatabase.openDatabase(path,null,SQLiteDatabase.OPEN_READONLY);
         Cursor cursor=database.rawQuery("select * from "+ Content.KEY_tabler,null);
         //将数据源加载到适配器中

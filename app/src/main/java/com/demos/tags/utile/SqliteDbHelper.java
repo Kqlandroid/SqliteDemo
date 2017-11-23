@@ -3,7 +3,10 @@ package com.demos.tags.utile;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.os.Environment;
 import android.util.Log;
+
+import java.io.File;
 
 /**
  * Created by Administrator on 2017/9/4 0004.
@@ -25,7 +28,33 @@ public class SqliteDbHelper extends SQLiteOpenHelper {
     public SqliteDbHelper(Context context){
         super(context,Content.KEY_SQLITE_NAME,null,Content.KEY_VERION);
     }
+    public SqliteDbHelper(Context context,String name){
+        super(context,getMyDatabaseName(name),null,Content.KEY_VERION);
+    }
+    private static String getMyDatabaseName(String name){
+        String databasename = name;
+        boolean isSdcardEnable = false;
+        String state = Environment.getExternalStorageState();
 
+        if(Environment.MEDIA_MOUNTED.equals(state)){//SDCard是否插入
+            isSdcardEnable = true;
+        }
+        String dbPath = null;
+        if(isSdcardEnable){
+            for (int i = 0; i < 2; i++) {
+                dbPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/";
+            }
+
+        }else{//未插入SDCard，建在内存中
+
+        }
+        File dbp = new File(dbPath);
+        if(!dbp.exists()){
+            dbp.mkdirs();
+        }
+        databasename = dbPath + databasename;
+        return databasename;
+    }
     /**
      * 创建数据库时回调
      * @param db

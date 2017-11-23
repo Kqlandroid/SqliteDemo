@@ -1,12 +1,9 @@
-package com.demos.tags.slideAdapter;
+package com.demos.tags.ui;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -22,18 +19,13 @@ import com.wyh.slideAdapter.SlideAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 public class SlideAdapterActivity extends AppCompatActivity {
-
     RecyclerView recyclerview;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_slide_adapter);
-        recyclerview= (RecyclerView) findViewById(R.id.recyclerview);
+        recyclerview = (RecyclerView) findViewById(R.id.recyclerview);
         initData();
     }
 
@@ -51,7 +43,7 @@ public class SlideAdapterActivity extends AppCompatActivity {
         recyclerview.setLayoutManager(new LinearLayoutManager(this));
         SlideAdapter.load(data)
                 .item(R.layout.slideadapter_recyclerview_layout_item,
-                        R.layout.left_menu, 1f, R.layout.right_menu, 0.4f)
+                        R.layout.left_menu, 1f, R.layout.right_menu, 0.36f)
                 .padding(5)
                 .header(R.layout.header_top_layout, 0.3f)
                 .bind(new HeaderBind() {

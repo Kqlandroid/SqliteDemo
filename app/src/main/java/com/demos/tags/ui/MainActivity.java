@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView tv_add,tv_addContent,tv_updatecontet,tv_deletecontet,tv_selectcontet
             ,tv_addContentApi, tv_updatecontetApi, tv_deletecontetApi,
             tv_selectcontetApi, tv_phone,tv_RecyclerView,tv_listView,
-            tv_listView2,tv_insertmore,tv_page,tv_videoplayer,tv_oschina,tv_blog;
+            tv_listView2,tv_insertmore,tv_page,tv_videoplayer,tv_oschina,tv_blog,tv_cehua,tv_recylview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,8 +71,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tv_oschina.setOnClickListener(this);
         tv_blog = (TextView) findViewById(R.id.tv_blog);
         tv_blog.setOnClickListener(this);
-
+        tv_cehua = (TextView) findViewById(R.id.tv_cehua);
+        tv_cehua.setOnClickListener(this);
+        tv_recylview = (TextView) findViewById(R.id.tv_recylview);
+        tv_recylview.setOnClickListener(this);
         ExistSDCard();
+        String path = getApplicationContext().getDatabasePath("info.db").getPath();
+        Log.e("Path1",""+path);
+        String path1 = Environment.getExternalStorageDirectory().getAbsolutePath()
+                + "/info.db";
+        Log.e("Path2",""+path1);
     }
     private boolean ExistSDCard() {
         if (android.os.Environment.getExternalStorageState().equals(
@@ -192,6 +201,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.tv_blog:
                 startActivity(new Intent(MainActivity.this,BlogActivity.class));
+                break;
+            case R.id.tv_cehua:
+                startActivity(new Intent(MainActivity.this,RecylerViewActivity.class));
+                break;
+            case R.id.tv_recylview:
+                startActivity(new Intent(MainActivity.this,SlideAdapterActivity.class));
                 break;
         }
 

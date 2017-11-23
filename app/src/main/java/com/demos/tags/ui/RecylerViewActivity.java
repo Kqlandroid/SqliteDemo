@@ -35,8 +35,8 @@ public class RecylerViewActivity extends AppCompatActivity {
         gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
             @Override
             public int getSpanSize(int position) {
-                int type=mRecyclerView.getAdapter().getItemViewType(position);
-                if (type==TestBean.type_three){
+                int type = mRecyclerView.getAdapter().getItemViewType(position);
+                if (type == TestBean.type_three){
                     return gridLayoutManager.getSpanCount();
                 }else {
                     return 1;
@@ -47,15 +47,15 @@ public class RecylerViewActivity extends AppCompatActivity {
             @Override
             public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
                 super.getItemOffsets(outRect, view, parent, state);
-                GridLayoutManager.LayoutParams l=(GridLayoutManager.LayoutParams)view.getLayoutParams();
-                int spanSize=l.getSpanSize();
-                int spanIndex=l.getSpanIndex();
-                outRect.top=20;
-                if (spanSize!=gridLayoutManager.getSpanCount()){
-                    if (spanIndex==1){
-                        outRect.left=0;
+                GridLayoutManager.LayoutParams l = (GridLayoutManager.LayoutParams)view.getLayoutParams();
+                int spanSize = l.getSpanSize();
+                int spanIndex = l.getSpanIndex();
+                outRect.top = 20;
+                if (spanSize != gridLayoutManager.getSpanCount()){
+                    if (spanIndex == 1){
+                        outRect.left = 0;
                     }else {
-                        outRect.right=10;
+                        outRect.right = 10;
                     }
                 }
             }
@@ -71,7 +71,7 @@ public class RecylerViewActivity extends AppCompatActivity {
         for (int i = 0; i < 30; i++) {
             int type ;
             if (i <= 5 || (i > 15 && i < 20)){
-                type=1;
+                type = 1;
                 Log.i(TAG, "initData:a "+type);
             }else if (i < 10 || i > 26){
                 type = 2;
@@ -81,11 +81,11 @@ public class RecylerViewActivity extends AppCompatActivity {
                 Log.i(TAG, "initData:c "+type);
             }
             TestBean bean = new TestBean();
-            bean.avatarColor=colors[type-1];
-            bean.type=type;
-            bean.content="content:"+type;
-            bean.name="name："+type;
-            bean.contentColor=colors[(type+1)%3];
+            bean.avatarColor = colors[ type - 1 ];
+            bean.type = type;
+            bean.content = "content:" + type;
+            bean.name = "name：" + type;
+            bean.contentColor = colors[ ( type + 1 ) % 3 ];
             list.add(bean);
         }
         List<DataModelOne> list1 = new ArrayList<>();
@@ -98,18 +98,18 @@ public class RecylerViewActivity extends AppCompatActivity {
         List<DataModelTwo> list2 = new ArrayList<>();
         for (int i = 0; i < 30; i++) {
             DataModelTwo bean = new DataModelTwo();
-            bean.avatarColor=colors[1];
-            bean.content="content:"+2;
-            bean.name="name："+2;
+            bean.avatarColor = colors [ 1 ];
+            bean.content = "content:" + 2;
+            bean.name = "name：" + 2;
             list2.add(bean);
         }
         List<DataModelThree> list3 = new ArrayList<>();
         for (int i = 0; i < 30; i++) {
             DataModelThree bean = new DataModelThree();
-            bean.avatarColor=colors[2];
-            bean.content="content:"+3;
-            bean.name="name："+3;
-            bean.contentColor=colors[2];
+            bean.avatarColor = colors[2];
+            bean.content = "content:" + 3;
+            bean.name = "name：" + 3;
+            bean.contentColor = colors[2];
             list3.add(bean);
         }
         adapter.addlist(list1,list2,list3);
