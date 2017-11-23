@@ -105,6 +105,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     DbManger.execSQl(db,sql);
                 }
                 db.close();
+                Toast.makeText(this, "插入成功", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.tv_updatecontet:
 //                修改表数据
@@ -112,12 +113,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 String updateSql = "update "+Content.KEY_tabler+" set "+Content.KEY_name+"='kql' where "+Content.KEY_id+"=1 ";
                 DbManger.execSQl(db,updateSql);
                 db.close();
+                Toast.makeText(this, "修改成功", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.tv_deletecontet:
                 db=dbHelper.getWritableDatabase();
                 String deleteSql="delete from "+Content.KEY_tabler+" where "+Content.KEY_id+"=1";
                 DbManger.execSQl(db,deleteSql);
                 db.close();
+                Toast.makeText(this, "删除成功", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.tv_selectcontet:
                 SQLiteDatabase     db1=dbHelper.getWritableDatabase();
