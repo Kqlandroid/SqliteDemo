@@ -4,11 +4,8 @@ import com.demos.tags.bean.Phone;
 import com.demos.tags.bsincess.HttpUtil;
 import com.demos.tags.mvp.MvpMainView;
 import com.google.gson.Gson;
-import com.google.gson.internal.ObjectConstructor;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,14 +14,14 @@ import java.util.Map;
  */
 
 public class MainPresenter extends BasePresenter {
-    String mUrl="https://tcc.taobao.com/cc/json/mobile_tel_segment.htm";
+    String mUrl = "https://tcc.taobao.com/cc/json/mobile_tel_segment.htm";
     private MvpMainView mvpMainView;
     Phone mPhone;
     public Phone getPhoneInfo(){
         return mPhone;
     }
     public MainPresenter(MvpMainView mainView){
-        mvpMainView = mainView;
+        this.mvpMainView = mainView;
     }
     public void sarchPhoneInfo(String phone){
         if (phone.length() != 11){

@@ -71,8 +71,7 @@ public class DbManger {
      * @param pageSize 当前页码
      * @return
      */
-    public  static  List<Persion> getListCurrentPage(
-            SQLiteDatabase database,String table,int currentPage,int pageSize){
+    public static  List<Persion> getListCurrentPage(SQLiteDatabase database,String table,int currentPage,int pageSize){
        int index = (currentPage - 1) * pageSize;//获取当前页码第一条数据的下标
         Cursor cursor = null;
         if (database != null){
